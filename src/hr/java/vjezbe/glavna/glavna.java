@@ -4,7 +4,9 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 import org.slf4j.Logger;
@@ -30,30 +32,32 @@ public class glavna {
 	public static void main(String[] args) throws NemoguceOdreditiGrupuOsiguranjaException {
 		
 		logger.info("Picka ti se zgadola");
+		Map<Kategorija,List<Artikl>> mapaArtikla = new HashMap<Kategorija, List<Artikl>>();
 		
 		Scanner unos = new Scanner(System.in);
 		
 		//Inicijaliziranje korisnika
 		System.out.print("Unesite broj korisnika koje zelite unjeti");
 		Integer numKorisnika= unesiBrojUzProvjeru(unos);
-		List <Korisnik> listaKorisnika = new ArrayList<Korisnik>(numKorisnika);
+		List <Korisnik> listaKorisnika = new ArrayList<Korisnik>();
 		unesiKorisnika(unos,listaKorisnika,numKorisnika);
 		
 		//Inicijaliziranje Kategorija i Artikala
 		System.out.print("Unesite broj kategorija koje zelite unjeti");
 		Integer brojKategorija = unesiBrojUzProvjeru(unos);
-		List<Kategorija> listaKategorije = new ArrayList<Kategorija>(brojKategorija);
-		unesiKategorije(unos,listaKategorije,brojKategorija);
+		List<Kategorija> listaKategorije = new ArrayList<Kategorija>();
+		unesiKategorije(unos,listaKategorije,brojKategorija,mapaArtikla);
 		
 		//Inicijaliziranje prodaja
 		System.out.println("Unesite broj artikala koji su aktivno na prodaju");
 		Integer pomBrojAktivnih = unesiBrojUzProvjeru(unos);
-		List <Prodaja> listaProdaja = new ArrayList<Prodaja>(pomBrojAktivnih);
+		List <Prodaja> listaProdaja = new ArrayList<Prodaja>();
 		
 		unesiProdaju(unos,listaKorisnika,listaKategorije,listaProdaja,pomBrojAktivnih);
 		
 		//Ispis rjesenja
 		ispisi(listaProdaja);
+		ispisPoKategorijama(listaKategorije);
 		
 		unos.close();
 	}
@@ -80,9 +84,9 @@ public class glavna {
 	}
 	
 	//Unosi kategoriju i artikle koji su dio kategorija
-	private static void unesiKategorije(Scanner unos,List<Kategorija> listaKategorije, Integer brojKategorija ) throws NemoguceOdreditiGrupuOsiguranjaException{
+	private static void unesiKategorije(Scanner unos,List<Kategorija> listaKategorije, Integer brojKategorija, Map<Kategorija, List<Artikl>> mapaArtikla ) throws NemoguceOdreditiGrupuOsiguranjaException{
 		unos.nextLine();
-		for (int i = 0; i<listaKategorije.size()+1;i++) {
+		for (int i = 0; i<brojKategorija;i++) {
 			System.out.println("Unesite naziv "+ (i +1) +". kategorije");
 			String pomNaziv = unos.nextLine();
 			System.out.println("Unesite broj artikla koji zelite unijeti za kategoriju");
@@ -91,8 +95,8 @@ public class glavna {
 			unos.nextLine();
 			for (int j = 0;j<pomBrojArtikla;j++) {
 				
-				System.out.println("Unesite tip "+(j+1)+". artikla\n1. Usluga\n2.Automobil");
-				Integer pomTip = unesiBrojUzProvjeru(unos);
+				System.out.println("Unesite tip "+(j+1)+". artikla\n1. Usluga\n2.Automobil\\n3.Stan");
+				Integer pomTip = unesiBrojUzProvjeru(unos); 
 				
 				if(pomTip == 1) {
 					unos.nextLine();
@@ -135,6 +139,7 @@ public class glavna {
 					String pomOpis = unos.nextLine();
 					System.out.println("Unesite kvadraturu "+ (j +1) +". oglasa stana");
 					Integer pomKvadratura = unesiBrojUzProvjeru(unos);
+					unos.nextLine();
 					System.out.println("Unesite cijenu "+ (j +1) +". oglasa stana	");
 					String pomStringCijena = unos.nextLine();
 					System.out.print("Odabir stanja artikla >> ");
@@ -147,17 +152,18 @@ public class glavna {
 				}
 			}
 			Kategorija dodajNovu = new Kategorija(pomNaziv,listaArtikla);
+			mapaArtikla.put(dodajNovu, listaArtikla);
 			listaKategorije.add(dodajNovu);
 		}
 	}
 	
 	
 	//Metoda za unos prodaje
-	private static void unesiProdaju(Scanner unos , List<Korisnik> listaKorisnika,List <Kategorija> poljeKategorije,List<Prodaja> poljeProdaje, Integer pomBrojAktivnih) {
-		for (int i = 0;i<poljeProdaje.size()+1;i++) {
+	private static void unesiProdaju(Scanner unos , List<Korisnik> listaKorisnika,List <Kategorija> listaKategorije,List<Prodaja> listaProdaje, Integer pomBrojAktivnih) {
+		for (int i = 0;i<pomBrojAktivnih;i++) {
 			System.out.println("Odaberite korisnika: \n");
 			
-			for (int j = 0; j<listaKorisnika.size()+1;j++) {
+			for (int j = 0; j<listaKorisnika.size();j++) {
 				System.out.println((j+1) +listaKorisnika.get(j).dohvatiKontakt()+"\n");
 			}
 			
@@ -165,23 +171,23 @@ public class glavna {
 			unos.nextLine();
 			System.out.println("Odaberite kategoriju:\n");
 			
-			for (int j = 0;j<poljeKategorije.size()+1;j++) {
-				System.out.println((j+1)+ ". "+poljeKategorije.get(j).getNaziv());
+			for (int j = 0;j<listaKategorije.size();j++) {
+				System.out.println((j+1)+ ". "+listaKategorije.get(j).getNaziv());
 			}
 			
 			Integer pomKategorija = unesiBrojUzProvjeru(unos);
 			unos.nextLine();
 			System.out.println("Odaberite artikl:\n");
 			
-			for (int j = 0;j<poljeKategorije.get(pomKategorija-1).getArtikli().size()+1;j++) {
-				System.out.println((j+1)+ ". " + poljeKategorije.get(pomKategorija-1).getArtikli().get(j).getNaslov());
+			for (int j = 0;j<listaKategorije.get(pomKategorija-1).getArtikli().size();j++) {
+				System.out.println((j+1)+ ". " + listaKategorije.get(pomKategorija-1).getArtikli().get(j).getNaslov());
 			}
 			Integer pomArtiklKategorije = unesiBrojUzProvjeru(unos);
 			unos.nextLine();
 			
 			LocalDate datum = LocalDate.now();
-			Prodaja dodajNovog= new Prodaja(poljeKategorije.get(pomKategorija-1).getArtikli().get(pomArtiklKategorije-1),listaKorisnika.get(pomKorisnik-1),datum);
-			poljeProdaje.add(dodajNovog);
+			Prodaja dodajNovog= new Prodaja(listaKategorije.get(pomKategorija-1).getArtikli().get(pomArtiklKategorije-1),listaKorisnika.get(pomKorisnik-1),datum);
+			listaProdaje.add(dodajNovog);
 		}
 		
 	}
@@ -245,10 +251,10 @@ public class glavna {
 		return Stanje.values()[stanjeRedniBroj - 1];
 	}
 	
-	//Metoda za ispis
+	//Metoda za ispis aktivnih oglasa
 	private static void ispisi(List<Prodaja> listaProdaja) {
 		System.out.println("Trenutni su oglasi na prodaju:");
-		for (int i = 0; i< listaProdaja.size()+1;i++) {
+		for (int i = 0; i<listaProdaja.size();i++) {
 			System.out.println("Naslov : " + listaProdaja.get(i).getArtikl().getNaslov());
 			System.out.println("Opis: "+ listaProdaja.get(i).getArtikl().getOpis());
 			System.out.println("Cijena: "+ listaProdaja.get(i).getArtikl().getCijena());
@@ -258,6 +264,16 @@ public class glavna {
 			System.out.println("Datum: " + stringDatum +"\n" );
 			//finalni ispis
 			System.out.println(listaProdaja.get(i).getKorisnik().dohvatiKontakt());
+		}
+	}
+	
+	private static void ispisPoKategorijama(List<Kategorija> listaKategorija) throws NemoguceOdreditiGrupuOsiguranjaException {
+		System.out.println("\nTrenutni oglasi po kategorijama:\n");
+		for(int i = 0;i < listaKategorija.size(); i++) {
+			System.out.println("Kategorija" + listaKategorija.get(i).getNaziv());
+			for (int j = 0;j < listaKategorija.get(i).getArtikli().size();j++) {
+				System.out.println(listaKategorija.get(i).getArtikli().get(j).tekstOglasa());
+			}
 		}
 	}
 

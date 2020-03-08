@@ -5,13 +5,13 @@ import java.util.List;
 public class Kategorija {
 	private String naziv;
 	private List<Artikl> artikli;
-		
-	public Kategorija(String naziv, List<Artikl> artikl) {
-			
-			this.naziv = naziv;
-			this.artikli = artikli;
-		}
 	
+	public Kategorija(String naziv, List<Artikl> artikli) {
+		super();
+		this.naziv = naziv;
+		this.artikli = artikli;
+	}
+
 	public String getNaziv() {
 		return naziv;
 	}
@@ -27,7 +27,8 @@ public class Kategorija {
 	public void setArtikli(List<Artikl> artikli) {
 		this.artikli = artikli;
 	}
-
+		
+	
 	
 
 }

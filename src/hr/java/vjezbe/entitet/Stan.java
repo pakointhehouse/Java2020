@@ -68,7 +68,7 @@ public class Stan extends Artikl implements Nekretnina {
 		} catch (CijenaJePreniskaException e) {
 			poruka = "Naslov nekretnine: " + getNaslov() + "\nOpis nekretnine: " + getOpis()
 					+ "\nKvadratura nekretnine: " + getKvadratura() + "\nPorez na nekretnine: " + e.getMessage()
-					 + "\nCijena nekretnine: " + getCijena()+ ", stanje :" + getStanje();
+					 + "\nCijena nekretnine: " + getCijena()+ ",\n stanje :" + getStanje();
 		}
 
 		return poruka;
