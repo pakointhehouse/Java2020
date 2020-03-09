@@ -1,34 +1,88 @@
 package hr.java.vjezbe.entitet;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class Kategorija {
+/**
+ * 
+ * @author Patrik
+ *
+ * @param <T>
+ */
+public class Kategorija<T extends Artikl> {
+
 	private String naziv;
-	private List<Artikl> artikli;
-	
-	public Kategorija(String naziv, List<Artikl> artikli) {
-		super();
+	public List<T> listaArtikala;
+
+	/**
+	 * Konstruktor paremetrizirane klase Kategorija koja nasljeduje apstraktnu klasu
+	 * Artikl
+	 * 
+	 * @param id    - Id eniteta
+	 * @param naziv - Naziv kategorije
+	 */
+	public Kategorija(String naziv) {
 		this.naziv = naziv;
-		this.artikli = artikli;
+		listaArtikala = new ArrayList<T>();
 	}
 
+	/**
+	 * Dodaje nove artikle u listu
+	 * 
+	 * @param dodaniArtikl - Dodana lista artikala
+	 */
+	public void dodajArtikl(T dodaniArtikl) {
+		listaArtikala.add(dodaniArtikl);
+	}
+	
+	public void dodajListuArtikla(List<T> listaArtikla) {
+		listaArtikala.addAll(listaArtikla);
+	}
+
+	/**
+	 * Dohvaca odabranu listu artikala
+	 * 
+	 * @param index - Redni broj liste
+	 * @return - Lista
+	 */
+	public T dohvatiArtikl(int index) {
+		return listaArtikala.get(index);
+	}
+
+	/**
+	 * Dohvaca listu artikala
+	 * 
+	 * @return - Lista artikala
+	 */
+	public List<T> getListaArtikala() {
+		return listaArtikala;
+	}
+
+	/**
+	 * Postavlja novu listu artikala
+	 * 
+	 * @param listaArtikala - Lista artikala
+	 */
+	public void setListaArtikala(List<T> listaArtikala) {
+		this.listaArtikala = listaArtikala;
+	}
+
+	/**
+	 * Dohvaca naziv kategorije
+	 * 
+	 * @return - Naziv kategorije
+	 */
 	public String getNaziv() {
 		return naziv;
 	}
 
+	/**
+	 * Postavlja naziv kategorije
+	 * 
+	 * @param naziv - Naziv kategorije
+	 */
 	public void setNaziv(String naziv) {
 		this.naziv = naziv;
 	}
-
-	public List<Artikl> getArtikli() {
-		return artikli;
-	}
-
-	public void setArtikli(List<Artikl> artikli) {
-		this.artikli = artikli;
-	}
-		
-	
-	
 
 }

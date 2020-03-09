@@ -7,7 +7,12 @@ import hr.java.vjezbe.iznimke.CijenaJePreniskaException;
 public interface Nekretnina {
 	
 	
-	
+	/**
+	 * Sucelje Nekretnina koja sluzi za izracunavanje poreza na nkretninu
+	 * 
+	 * @author Patrik Mede
+	 * @version 1.0
+	 */
 	
 	  default BigDecimal izracunajPorez(BigDecimal cijenaNekretnine) {
 		  BigDecimal porez = null;

@@ -4,21 +4,44 @@ import java.math.BigDecimal;
 
 import hr.java.vjezbe.iznimke.NemoguceOdreditiGrupuOsiguranjaException;
 
+/**
+ * 
+ * @author Patrik
+ *
+ */
 public class Automobil extends Artikl implements Vozilo {
 	
 	
 	private BigDecimal snagaKs;
 	
 	
-
+	/**
+	 * Vraca kolicinu konjskih snaga
+	 * 
+	 * @return - Konjska snaga
+	 */
 	public BigDecimal getSnagaKs() {
 		return snagaKs;
 	}
 
+	/**
+	 * Postavlja konjske snage
+	 * 
+	 * @param snagaKs - Konjske snage
+	 */
 	public void setSnagaKs(BigDecimal snagaKs) {
 		this.snagaKs = snagaKs;
 	}
 
+	/**
+	 * Konstruktor za klasu automobil
+	 * 
+	 * @param naslov  - Naziv automobila
+	 * @param opis    - Opis automobila
+	 * @param snagaKs - Snaga automobila u konjskim snagama
+	 * @param cijena  - Cijena automobila
+	 * @param stanje  - Stanje artikla
+	 */
 	public Automobil(String naslov, String opis, BigDecimal cijena,BigDecimal snagaKs,Stanje stanje) throws NemoguceOdreditiGrupuOsiguranjaException {
 		super(naslov, opis, cijena, stanje);
 		this.snagaKs = snagaKs;
