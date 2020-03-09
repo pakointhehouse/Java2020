@@ -29,9 +29,9 @@ import hr.java.vjezbe.iznimke.NemoguceOdreditiGrupuOsiguranjaException;
  * @author Patrik
  * @version 1.0
  */
-public class glavna {
+public class Glavna {
 
-	private static final Logger logger = LoggerFactory.getLogger(glavna.class);
+	private static final Logger logger = LoggerFactory.getLogger(Glavna.class);
 	
 	public static void main(String[] args) throws NemoguceOdreditiGrupuOsiguranjaException {
 		
@@ -114,7 +114,7 @@ public class glavna {
 			//Unosimo artikl i dodajemo ga u neku kategoriju odredenu za artikle
 			for (int j = 0;j<pomBrojArtikla;j++) {
 				
-				System.out.println("Unesite tip "+(j+1)+". artikla\n1. Usluga\n2.Automobil\\n3.Stan");
+				System.out.println("Unesite tip "+(j+1)+". artikla\n1. Usluga\n2.Automobil\n3.Stan");
 				Integer pomTip = unesiBrojUzProvjeru(unos); 
 				
 				if(pomTip == 1) {

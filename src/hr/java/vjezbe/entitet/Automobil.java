@@ -49,32 +49,45 @@ public class Automobil extends Artikl implements Vozilo {
 
 	@Override
 	public BigDecimal izracunajGrupuOsiguranja() throws NemoguceOdreditiGrupuOsiguranjaException {
-		int grupaOsiguranja = 0;
-		int grupa = izracunajKw(snagaKs).intValue();
-		if (grupa <45) {
-			grupaOsiguranja = 0;
-		}else if(grupa>45 && grupa<55){
-			grupaOsiguranja = 1;
-		}else if(grupa>55 && grupa<65){
-			grupaOsiguranja = 2;
-		}else if(grupa>65 && grupa<75){
-			grupaOsiguranja = 3;
-		}else if(grupa>75 && grupa<85){
-			grupaOsiguranja = 4;
+		double tempSnagaKs = izracunajKw(snagaKs).doubleValue();
+
+		int izracunGrupe = 0;
+
+		if (tempSnagaKs < 40) {
+			izracunGrupe = 1;
+		}
+		if (tempSnagaKs >= 40 && tempSnagaKs < 47) {
+			izracunGrupe = 1;
+		}
+		if (tempSnagaKs >= 47 && tempSnagaKs < 62) {
+			izracunGrupe = 2;
+		}
+		if (tempSnagaKs >= 62 && tempSnagaKs < 80) {
+			izracunGrupe = 3;
+		}
+		if (tempSnagaKs >= 80 && tempSnagaKs < 110) {
+			izracunGrupe = 4;
+		}
+		if (tempSnagaKs >= 110 && tempSnagaKs < 170) {
+			izracunGrupe = 5;
+		}
+		if (tempSnagaKs >= 170) {
+			izracunGrupe = 6;
 			throw new NemoguceOdreditiGrupuOsiguranjaException("Previše kw, ne mogu odrediti grupu osiguranja.");
 		}
-		
-		BigDecimal vrati = new BigDecimal(grupaOsiguranja);
-		return vrati;
+
+		BigDecimal result = new BigDecimal(izracunGrupe);
+
+		return result;
 	}
 
 	@Override
 	public String tekstOglasa() throws NemoguceOdreditiGrupuOsiguranjaException {
 		String vrati;
 		try {
-			vrati = ("Naslov:"+ getNaslov() +", Opis:"+getOpis() + ", snaga "+snagaKs+" ,cijena Osiguranja: "+ IzracunajCijenuOsiguranja() + ",cijena automobila"+ getCijena()+ ", stanje :" + getStanje());
+			vrati = ("Naslov:"+ getNaslov() +", Opis:"+getOpis() + ", snaga "+snagaKs+" ,cijena Osiguranja: "+ izracunajCijenuOsiguranja() + ",cijena automobila"+ getCijena()+ ", stanje :" + getStanje());
 		}catch (NemoguceOdreditiGrupuOsiguranjaException e) {
-			vrati = ("Naslov:"+ getNaslov() +", Opis:"+getOpis() + ", snaga "+snagaKs+" ,cijena Osiguranja: "+ IzracunajCijenuOsiguranja() + ",cijena automobila"+ getCijena()+ ", stanje :" + getStanje());
+			vrati = ("Naslov:"+ getNaslov() +", Opis:"+getOpis() + ", snaga "+snagaKs+" ,cijena Osiguranja: "+ izracunajCijenuOsiguranja() + ",cijena automobila"+ getCijena()+ ", stanje :" + getStanje());
 
 		}
 		return vrati;

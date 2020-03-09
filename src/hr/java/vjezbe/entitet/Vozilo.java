@@ -39,29 +39,41 @@ public interface Vozilo {
 	 * @return cijena osiguranja
 	 * @throws NemoguceOdreditiGrupuOsiguranjaException
 	 */
-	default BigDecimal IzracunajCijenuOsiguranja() throws NemoguceOdreditiGrupuOsiguranjaException {
-		int zaSwitch = IzracunajCijenuOsiguranja().intValue();
-		BigDecimal cijenaOsiguranja =new BigDecimal(500) ;
-		
-			switch(zaSwitch) {
-			case 0:
-				cijenaOsiguranja = new BigDecimal(3000);
-				break;
-			case 1:
-				 cijenaOsiguranja = new BigDecimal(4000);
-				 break;
-			case 2:
-				 cijenaOsiguranja= new BigDecimal(5000);
-				 break;
-			case 3:
-				 cijenaOsiguranja = new BigDecimal(6000);
-				 break;
-			default:
-				 cijenaOsiguranja = new BigDecimal(10000);
-				 break;
-			}
-		return cijenaOsiguranja;
-		
+	default BigDecimal izracunajCijenuOsiguranja() throws NemoguceOdreditiGrupuOsiguranjaException {
+
+		BigDecimal tempGrupa;
+		int tempResult = 0;
+
+		tempGrupa = izracunajGrupuOsiguranja();
+
+		int value = tempGrupa.intValue();
+
+		switch (value) {
+
+		case 1:
+			tempResult = 2000;
+			break;
+		case 2:
+			tempResult = 2500;
+			break;
+		case 3:
+			tempResult = 2700;
+			break;
+		case 4:
+			tempResult = 3000;
+			break;
+		case 5:
+			tempResult = 3500;
+			break;
+		default:
+			break;
+		}
+
+		BigDecimal result = new BigDecimal(tempResult);
+
+		return result;
+
 	}
+
 	
 }
