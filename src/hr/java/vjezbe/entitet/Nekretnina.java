@@ -14,6 +14,12 @@ public interface Nekretnina {
 	 * @version 1.0
 	 */
 	
+	
+	/**
+	 * 
+	 * @param cijenaNekretnine - prima cijenu nekretnine
+	 * @return porez - vraca porez
+	 */
 	  default BigDecimal izracunajPorez(BigDecimal cijenaNekretnine) {
 		  BigDecimal porez = null;
 		

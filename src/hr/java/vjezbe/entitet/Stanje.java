@@ -17,8 +17,8 @@ public enum Stanje {
 	/**
 	 * Konstruktor enumeriacije za stanje usluge
 	 * 
-	 * @param kod
-	 * @param opis
+	 * @param kod - postavljaa kod
+	 * @param opis - postavlja opis
 	 */
 	private Stanje(Integer kod, String opis) {
 		this.kod = kod;
@@ -26,28 +26,28 @@ public enum Stanje {
 	}
 	/**
 	 * Metoda koja vraca kod
-	 * @return kod 
+	 * @return kod  - prima kod
 	 */
 	public Integer getKod() {
 		return kod;
 	}
 	/**
 	 *Metoda koja postavlja kod 
-	 * @param kod
+	 * @param kod - prima integer kod
 	 */
 	public void setKod(Integer kod) {
 		this.kod = kod;
 	}
 	/**
 	 * Metoda koja vraca opis
-	 * @return opis 
+	 * @return opis  - vraca opis
 	 */
 	public String getOpis() {
 		return opis;
 	}
 	/**
 	 *Metoda koja postavlja opis 
-	 * @param opis
+	 * @param opis - prima opis
 	 */
 	public void setOpis(String opis) {
 		this.opis = opis;

@@ -15,9 +15,9 @@ public class Prodaja {
 	/**
 	 * Konstruktor klase prodaja
 	 * 
-	 * @param artikl
-	 * @param korisnik
-	 * @param datumObjave
+	 * @param artikl - prima artikl
+	 * @param korisnik - prima korisnika
+	 * @param datumObjave - prima datum objave
 	 */
 	public Prodaja(Artikl artikl, Korisnik korisnik, LocalDate datumObjave) {
 		super();
@@ -28,7 +28,7 @@ public class Prodaja {
 	
 	/**
 	 * Metoda za dodavanje artikla
-	 * @return artikl
+	 * @return artikl - vraca artikl
 	 */
 	public Artikl getArtikl() {
 		return artikl;
@@ -36,7 +36,7 @@ public class Prodaja {
 	
 	/**
 	 * Postavlja artikl
-	 * @param artikl
+	 * @param artikl - prima korisnika
 	 */
 	public void setArtikl(Artikl artikl) {
 		this.artikl = artikl;
@@ -44,7 +44,7 @@ public class Prodaja {
 
 	/**
 	 *  Vraca korisnika
-	 * @return korisnik
+	 * @return korisnik - vraca korisnika
 	 */
 	public Korisnik getKorisnik() {
 		return korisnik;
@@ -52,7 +52,7 @@ public class Prodaja {
 
 	/**
 	 *  Postavlja korisnika
-	 * @param korisnik
+	 * @param korisnik - prima korisnika
 	 */
 	public void setKorisnik(Korisnik korisnik) {
 		this.korisnik = korisnik;
@@ -60,7 +60,7 @@ public class Prodaja {
 
 	/**
 	 * Vraca datum objave prodaje
-	 * @return datum objave
+	 * @return datum objave - vraca datum objave
 	 */
 	public LocalDate getDatumObjave() {
 		return datumObjave;
@@ -68,7 +68,7 @@ public class Prodaja {
 
 	/**
 	 * Postavlja datum objave
-	 * @param datumObjave
+	 * @param datumObjave - prima datum objave
 	 */
 	public void setDatumObjave(LocalDate datumObjave) {
 		this.datumObjave = datumObjave;

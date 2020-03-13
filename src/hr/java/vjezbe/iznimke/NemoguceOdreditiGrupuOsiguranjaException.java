@@ -1,5 +1,10 @@
 package hr.java.vjezbe.iznimke;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import hr.java.vjezbe.glavna.Glavna;
+
 /**
  * Oznacena klasa NemoguceOdreditiGrupuOsiguranjaException koja se poziva kada
  * je nemoguce odrediti grupu osiguranja
@@ -10,6 +15,7 @@ package hr.java.vjezbe.iznimke;
 
 public class NemoguceOdreditiGrupuOsiguranjaException extends Exception {
 
+	private static final Logger logger = LoggerFactory.getLogger(Glavna.class);
 
 	/**
 	 * Serijalni broj verzije UID
@@ -21,6 +27,7 @@ public class NemoguceOdreditiGrupuOsiguranjaException extends Exception {
 	 */
 	public NemoguceOdreditiGrupuOsiguranjaException() {
 		super();
+		logger.info("Nema grupe osiguranja");
 	}
 
 	/**
@@ -30,6 +37,7 @@ public class NemoguceOdreditiGrupuOsiguranjaException extends Exception {
 	 */
 	public NemoguceOdreditiGrupuOsiguranjaException(String message) {
 		super(message);
+		logger.info("Nema grupe osiguranja");
 	}
 
 	/**

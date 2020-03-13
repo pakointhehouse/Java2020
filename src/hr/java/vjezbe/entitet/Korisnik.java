@@ -9,7 +9,6 @@ public abstract  class Korisnik {
 	 * 
 	 * @param email   - Email korisnika
 	 * @param telefon - Broj telefona korisnika
-	 * @param id      - Id eniteta
 	 */
 	public Korisnik(String email,String telefon) {
 		this.email = email;

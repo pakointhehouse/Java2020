@@ -27,7 +27,6 @@ public class Stan extends Artikl implements Nekretnina {
 	 * @param cijena     - Cijena stana
 	 * @param kvadratura - Kvadratura stana
 	 * @param stanje     - Stanje artikla
-	 * @param id         - Id eniteta
 	 */
 	public Stan(String naslov, String opis, BigDecimal cijena, int kvadratura,Stanje stanje) {
 		super(naslov, opis, cijena,stanje);

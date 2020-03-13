@@ -22,7 +22,7 @@ public class PrivatniKorisnik extends Korisnik {
 	
 	/**
 	 * Postavlja ime privatnog Korisnika
-	 * @return
+	 * @param ime - prima ime ime
 	 */
 	public void setIme(String ime) {
 		this.ime = ime;
@@ -30,7 +30,7 @@ public class PrivatniKorisnik extends Korisnik {
 	
 	/**
 	 * Vraca prezime privatnog Korisnika
-	 * @return prezime
+	 * @return prezime - vraca prezime
 	 */
 	public String getPrezime() {
 		return prezime;
@@ -38,7 +38,7 @@ public class PrivatniKorisnik extends Korisnik {
 	
 	/**
 	 * Postavlja prezime privatnog Korisnika
-	 * @param prezime
+	 * @param prezime - prima prezime
 	 */
 	public void setPrezime(String prezime) {
 		this.prezime = prezime;
@@ -58,7 +58,10 @@ public class PrivatniKorisnik extends Korisnik {
 		this.prezime = prezime;
 	}
 	
-	
+	/**
+	 * Dophvaca kontakt
+	 * @return vrati - vraca informacije o kontaktu
+	 */
 	@Override
 	public String dohvatiKontakt() {
 		String vrati = "Ime:" +ime+", Prezime:"+prezime +", email: "+getEmail()+", telefon:"+getTelefon();

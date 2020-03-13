@@ -2,6 +2,7 @@ package hr.java.vjezbe.entitet;
 
 import java.math.BigDecimal;
 
+import hr.java.vjezbe.iznimke.CijenaJePreniskaException;
 import hr.java.vjezbe.iznimke.NemoguceOdreditiGrupuOsiguranjaException;
 /**
  * 
@@ -13,8 +14,8 @@ public interface Vozilo {
 	/**
 	 * Izracunava kilowate
 	 * 
-	 * @param konjskaSnaga
-	 * @return kilowat
+	 * @param konjskaSnaga - konjska snaga automobila
+	 * @return kilowat - vraca snagu u kilowatima
 	 */
 	 default BigDecimal izracunajKw(BigDecimal konjskaSnaga) {
 		 
@@ -28,18 +29,18 @@ public interface Vozilo {
 	 /**
 	  * Izracunava grupu osiguranja
 	  * 
-	  * @return grupa osiguranja
-	  * @throws NemoguceOdreditiGrupuOsiguranjaException
+	  * @return grupa osiguranja - vraca iznimku da se nemoze odrediti grupa osiguranja
+	  * @throws NemoguceOdreditiGrupuOsiguranjaException - baca iznimku da se nemoze odrediti grupa osiguranja
 	  */
 	public BigDecimal izracunajGrupuOsiguranja() throws NemoguceOdreditiGrupuOsiguranjaException;
 	
 	/**
 	 * Izracunava cijenu osiguranja
 	 * 
-	 * @return cijena osiguranja
-	 * @throws NemoguceOdreditiGrupuOsiguranjaException
+	 * @return cijena osiguranja - vraca cijenu osiguranja
+	 * @throws NemoguceOdreditiGrupuOsiguranjaException - baca iznimku nemoguce odrediti grupu osiguranja
 	 */
-	default BigDecimal izracunajCijenuOsiguranja() throws NemoguceOdreditiGrupuOsiguranjaException {
+	default BigDecimal izracunajCijenuOsiguranja() throws  NemoguceOdreditiGrupuOsiguranjaException{
 
 		BigDecimal tempGrupa;
 		int tempResult = 0;

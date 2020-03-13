@@ -41,6 +41,7 @@ public class Automobil extends Artikl implements Vozilo {
 	 * @param snagaKs - Snaga automobila u konjskim snagama
 	 * @param cijena  - Cijena automobila
 	 * @param stanje  - Stanje artikla
+	 * @throws NemoguceOdreditiGrupuOsiguranjaException - baca inzimku nemoguce odrediti grupu osiguiranja
 	 */
 	public Automobil(String naslov, String opis, BigDecimal cijena,BigDecimal snagaKs,Stanje stanje) throws NemoguceOdreditiGrupuOsiguranjaException {
 		super(naslov, opis, cijena, stanje);
@@ -73,7 +74,6 @@ public class Automobil extends Artikl implements Vozilo {
 		}
 		if (tempSnagaKs >= 170) {
 			izracunGrupe = 6;
-			throw new NemoguceOdreditiGrupuOsiguranjaException("Previše kw, ne mogu odrediti grupu osiguranja.");
 		}
 
 		BigDecimal result = new BigDecimal(izracunGrupe);

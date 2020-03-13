@@ -11,10 +11,10 @@ public class Usluga extends Artikl {
 	/**
 	 * Konstruktor usluge
 	 * 
-	 * @param naslov
-	 * @param opis
-	 * @param cijena
-	 * @param stanje
+	 * @param naslov - prima naslov
+	 * @param opis - prima opis
+	 * @param cijena - prima cijenu 
+	 * @param stanje - prima stanje
 	 */
 	public Usluga(String naslov, String opis, BigDecimal cijena,Stanje stanje) {
 		super(naslov, opis, cijena,stanje);
@@ -23,7 +23,7 @@ public class Usluga extends Artikl {
 
 	/**
 	 * Funkcija koja vraca tekst Oglasa u obliku stringa
-	 * @return string oglasa
+	 * @return string oglasa - vraca informacije o oglasima
 	 */
 	@Override
 	public String tekstOglasa() {

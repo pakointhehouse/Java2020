@@ -7,7 +7,7 @@ import java.util.List;
  * 
  * @author Patrik
  *
- * @param <T>
+ * @param <T> - parametrizirana klasa
  */
 public class Kategorija<T extends Artikl> {
 
@@ -18,7 +18,6 @@ public class Kategorija<T extends Artikl> {
 	 * Konstruktor paremetrizirane klase Kategorija koja nasljeduje apstraktnu klasu
 	 * Artikl
 	 * 
-	 * @param id    - Id eniteta
 	 * @param naziv - Naziv kategorije
 	 */
 	public Kategorija(String naziv) {

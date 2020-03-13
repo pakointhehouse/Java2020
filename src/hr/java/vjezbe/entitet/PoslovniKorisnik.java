@@ -14,7 +14,7 @@ public class PoslovniKorisnik extends Korisnik {
 	
 	/**
 	 * Vraca naziv Poslovnog Korisnika
-	 * @return
+	 * @return naziv - vraca naziv 
 	 */
 	public String getNaziv() {
 		return naziv;
@@ -22,7 +22,7 @@ public class PoslovniKorisnik extends Korisnik {
 	
 	/**
 	 * Postavlja naziv Poslovnog Korisnika
-	 * @return
+	 * @param naziv - prima naziv
 	 */
 	public void setNaziv(String naziv) {
 		this.naziv = naziv;
@@ -30,14 +30,14 @@ public class PoslovniKorisnik extends Korisnik {
 
 	/**
 	 * Vraca WEB Poslovnog Korisnika
-	 * @return
+	 * @return web - vraca web
 	 */
 	public String getWeb() {
 		return web;
 	}
 	/**
 	 * Postavlja web Poslovnog Korisnika
-	 * @return
+	 * @param web - prima web stranicu korisnika
 	 */
 	public void setWeb(String web) {
 		this.web = web;
@@ -60,7 +60,7 @@ public class PoslovniKorisnik extends Korisnik {
 
 	/**
 	 * Vraca informacije Poslovnog Korisnika u obliku Stringa
-	 * @return String
+	 * @return String - vraca string
 	 */
 	@Override
 	public String dohvatiKontakt() {

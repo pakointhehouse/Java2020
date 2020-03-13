@@ -20,8 +20,10 @@ public abstract class Artikl {
 	 * Konstruktor klase Artikl
 	 * 
 	 * 
-	 * @param id    - String
-	 * @param naziv - Naziv kategorije
+	 * @param naslov - Naziv kategorije
+	 * @param cijena - Cijena kategorije
+	 * @param stanje - Stanje kategorije
+	 * @param  opis - opis kategorije
 	 */
 	
 	public Artikl(String naslov, String opis, BigDecimal cijena,Stanje stanje) {

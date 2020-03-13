@@ -1,5 +1,9 @@
 package hr.java.vjezbe.iznimke;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import hr.java.vjezbe.glavna.Glavna;
 
 /**
  * Klasa neoznacene iznimke CijenaJePreniskaException za obradu iznimke o cijeni
@@ -10,6 +14,7 @@ package hr.java.vjezbe.iznimke;
  */
 public class CijenaJePreniskaException extends RuntimeException {
 
+	private static final Logger logger = LoggerFactory.getLogger(Glavna.class);
 
 	/**
 	 * Serijalni broj verzije UID
@@ -21,6 +26,7 @@ public class CijenaJePreniskaException extends RuntimeException {
 	 */
 	public CijenaJePreniskaException() {
 		super();
+		logger.info("Cijena je preniska");
 	}
 
 	/**

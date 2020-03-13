@@ -8,10 +8,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import hr.java.vjezbe.entitet.Artikl;
 import hr.java.vjezbe.entitet.Automobil;
 import hr.java.vjezbe.entitet.Kategorija;
@@ -23,7 +21,6 @@ import hr.java.vjezbe.entitet.Stan;
 import hr.java.vjezbe.entitet.Stanje;
 import hr.java.vjezbe.entitet.Usluga;
 import hr.java.vjezbe.iznimke.NemoguceOdreditiGrupuOsiguranjaException;
-
 /**
  * 
  * @author Patrik
@@ -58,6 +55,8 @@ public class Glavna {
 		List <Prodaja> listaProdaja = new ArrayList<Prodaja>();
 		unesiProdaju(unos,listaKorisnika,listaKategorije,listaProdaja,pomBrojAktivnih);
 		
+		
+		
 		//Ispis rjesenja
 		ispisi(listaProdaja);
 		ispisPoKategorijama(listaKategorije);
@@ -70,9 +69,9 @@ public class Glavna {
 	/**
 	 * Funkcija koja unosi tip korisnika
 	 * 
-	 * @param unos
-	 * @param listaKorisnika
-	 * @param numKorisnika
+	 * @param unos -prima unos
+	 * @param listaKorisnika - prima listu korisnika
+	 * @param numKorisnika - prima broj Korisnika
 	 */
 	private static  void unesiKorisnika(Scanner unos,List<Korisnik> listaKorisnika,Integer numKorisnika) {
 		unos.nextLine();
@@ -96,11 +95,11 @@ public class Glavna {
 	/**
 	 * Funkcija koja unosi artikle u ordredene kategorije
 	 * 
-	 * @param unos
-	 * @param listaKategorije
-	 * @param brojKategorija
-	 * @param mapaArtikla
-	 * @throws NemoguceOdreditiGrupuOsiguranjaException
+	 * @param unos - prima unos
+	 * @param listaKategorije - prima listu kategorija
+	 * @param brojKategorija - prima broj kategorija
+	 * @param mapaArtikla - prima mapu artikla
+	 * @throws NemoguceOdreditiGrupuOsiguranjaException - baca iznimku nemogucusto odredenja grupe osiguranja
 	 */
 	private static void unesiKategorije(Scanner unos,List<Kategorija<Artikl>> listaKategorije, Integer brojKategorija, Map<Kategorija<Artikl>, List<Artikl>> mapaArtikla ) throws NemoguceOdreditiGrupuOsiguranjaException{
 		unos.nextLine();
@@ -112,63 +111,20 @@ public class Glavna {
 			List <Artikl> listaArtikla = new ArrayList<Artikl>(pomBrojArtikla);
 			unos.nextLine();
 			//Unosimo artikl i dodajemo ga u neku kategoriju odredenu za artikle
-			for (int j = 0;j<pomBrojArtikla;j++) {
-				
-				System.out.println("Unesite tip "+(j+1)+". artikla\n1. Usluga\n2.Automobil\n3.Stan");
-				Integer pomTip = unesiBrojUzProvjeru(unos); 
-				
-				if(pomTip == 1) {
-					unos.nextLine();
-					System.out.println("Unesite naslov "+ (j +1) +". oglasa usluge");
-					String pomNaslov = unos.nextLine();
-					System.out.println("Unesite opis "+ (j +1) +". oglasa usluge");
-					String pomOpis = unos.nextLine();
-					System.out.println("Unesite cijenu "+ (j +1) +". oglasa usluge");
-					String pomStringCijena = unos.nextLine();
-					System.out.print("Odabir stanja artikla >> ");
-					Stanje pomStanje = unosStanja(unos);
-					
-					BigDecimal pomCijena = new BigDecimal(pomStringCijena.replaceAll(",", "."));
-					Artikl dodajArtikl = new Usluga(pomNaslov,pomOpis,pomCijena,pomStanje);
-					listaArtikla.add(dodajArtikl);
-					
-				}else if(pomTip == 2) {
-					unos.nextLine();
-					System.out.println("Unesite naslov "+ (j +1) +". oglasa Automobila");
-					String pomNaslov = unos.nextLine();
-					System.out.println("Unesite opis "+ (j +1) +". oglasa Automobila");
-					String pomOpis = unos.nextLine();
-					System.out.println("Unesite snagu "+ (j +1) +". oglasa Automobila");
-					String stringSnaga = unos.nextLine();
-					System.out.println("Unesite cijenu "+ (j +1) +". oglasa Automobila");
-					String pomStringCijena = unos.nextLine();
-					System.out.print("Odabir stanja artikla >> ");
-					Stanje pomStanje = unosStanja(unos);
-					
-					BigDecimal pomSnaga = new BigDecimal(stringSnaga);
-					BigDecimal pomCijena = new BigDecimal(pomStringCijena.replaceAll(",", "."));
-					Artikl dodajArtikl = new Automobil(pomNaslov,pomOpis,pomCijena,pomSnaga,pomStanje);
-					listaArtikla.add(dodajArtikl);
-					
-				}else if(pomTip == 3) {
-					unos.nextLine();
-					System.out.println("Unesite naslov "+ (j +1) +". oglasa stana");
-					String pomNaslov = unos.nextLine();
-					System.out.println("Unesite opis "+ (j +1) +". oglasa stana");
-					String pomOpis = unos.nextLine();
-					System.out.println("Unesite kvadraturu "+ (j +1) +". oglasa stana");
-					Integer pomKvadratura = unesiBrojUzProvjeru(unos);
-					unos.nextLine();
-					System.out.println("Unesite cijenu "+ (j +1) +". oglasa stana	");
-					String pomStringCijena = unos.nextLine();
-					System.out.print("Odabir stanja artikla >> ");
-					Stanje pomStanje = unosStanja(unos);
-					
-					BigDecimal pomCijena = new BigDecimal(pomStringCijena.replaceAll(",", "."));
-					Stan dodajArtikl = new Stan(pomNaslov,pomOpis,pomCijena,pomKvadratura,pomStanje);
-					listaArtikla.add(dodajArtikl);
-					
-				}
+			for (int j = 0;j<pomBrojArtikla;j++) {	
+					System.out.println("Unesite tip "+(j+1)+". artikla\n1. Usluga\n2.Automobil\n3.Stan");
+					Integer pomTip = unesiBrojUzProvjeru(unos); 
+							
+					if(pomTip == 1) {
+						listaArtikla.add(unesiteUslugu(unos,j));
+								
+					}else if(pomTip == 2) {
+						listaArtikla.add(unesiteAutomobil(unos,j));
+								
+					}else if(pomTip == 3) {
+						listaArtikla.add(unesiteStan(unos,j));
+								
+					}
 			}
 			Kategorija<Artikl> dodajNovu = new Kategorija<Artikl>(pomNaziv);
 			dodajNovu.dodajListuArtikla(listaArtikla);
@@ -182,11 +138,11 @@ public class Glavna {
 	/**
 	 * Funkcija koja unosi prodaje i odlucuje koje su aktivne
 	 * 
-	 * @param unos
-	 * @param listaKorisnika
-	 * @param listaKategorije
-	 * @param listaProdaje
-	 * @param pomBrojAktivnih
+	 * @param unos - prima unos
+	 * @param listaKorisnika - prima listu korisnika
+	 * @param listaKategorije - prima listu kategorija
+	 * @param listaProdaje - prima listu aktivnih prodaja 
+	 * @param pomBrojAktivnih - prima broj aktivnih prodaja
 	 */
 	private static void unesiProdaju(Scanner unos , List<Korisnik> listaKorisnika,List <Kategorija<Artikl>> listaKategorije,List<Prodaja> listaProdaje, Integer pomBrojAktivnih) {
 		for (int i = 0;i<pomBrojAktivnih;i++) {
@@ -225,9 +181,9 @@ public class Glavna {
 	/**
 	 * Funkcija koja unosi privatnog korisnika
 	 * 
-	 * @param unos
-	 * @param listaKorisnika
-	 * @param i
+	 * @param unos - prima unos
+	 * @param listaKorisnika - prima listu korisnika
+	 * @param i -prima integer i
 	 */
 	private static void unesiPrivatnogKorisnika(Scanner unos,List<Korisnik> listaKorisnika,Integer i) {
 
@@ -246,9 +202,9 @@ public class Glavna {
 	/**
 	 * Funkcija koja unsi poslovnog korisnika
 	 * 
-	 * @param unos
-	 * @param listaKorisnika
-	 * @param i
+	 * @param unos - prima unos
+	 * @param listaKorisnika - prima listu korisnika
+	 * @param i - prima integer i
 	 */
 	private static void unesiPoslovnogKorisnika(Scanner unos,List<Korisnik> listaKorisnika,Integer i) {
 		System.out.println("Unesite naziv "+ (i +1) +". Korisnika");	
@@ -264,9 +220,9 @@ public class Glavna {
 	}
 	
 	/**
-	 * Funkcija koja provjerava Integer
-	 * @param unos
-	 * @return provjerena brojka
+	 * Funkcija koja provjerava Integer 
+	 * @param unos - Scanner unosa
+	 * @return provjerena brojka - vraca provjerenu brojku
 	 */
 	private static Integer unesiBrojUzProvjeru(Scanner unos) {
 		boolean pogodio = false;
@@ -291,8 +247,8 @@ public class Glavna {
 	/**
 	 * Funkcija za unos stanja artikla
 	 * 
-	 * @param unos
-	 * @return
+	 * @param unos - unos rednog broja
+	 * @return stanje - vraca stanje artikla
 	 */
 	private static Stanje unosStanja(Scanner unos) {
 		 for (int i = 0; i < Stanje.values().length; i++) {
@@ -306,7 +262,8 @@ public class Glavna {
 	/**
 	 * Funkcija za ispis aktivnih prodaja
 	 * 
-	 * @param listaProdaja
+	 * @param listaProdaja - lista prodaja aktivnih artikla
+	 * @throws InterruptedException 
 	 */
 	private static void ispisi(List<Prodaja> listaProdaja) {
 		System.out.println("Trenutni su oglasi na prodaju:");
@@ -326,8 +283,8 @@ public class Glavna {
 	/**
 	 * Funkcija za ispit artikala po kategorijama
 	 * 
-	 * @param listaKategorija
-	 * @throws NemoguceOdreditiGrupuOsiguranjaException
+	 * @param listaKategorija - lista kategorija
+	 * @throws NemoguceOdreditiGrupuOsiguranjaException - baca iznimku nemoguce odrediti grupu osiguranja excpetion
 	 */
 	private static void ispisPoKategorijama(List<Kategorija<Artikl>> listaKategorija) throws NemoguceOdreditiGrupuOsiguranjaException {
 		System.out.println("\nTrenutni oglasi po kategorijama:\n");
@@ -342,7 +299,7 @@ public class Glavna {
 	/**
 	 * Funkcija za ispis artikala kategorija iz mape
 	 * 
-	 * @param mapaArtikla
+	 * @param mapaArtikla - mapa sa listom kljucem kategorije i listom artikala za svaki kljuc
 	 */
 	private static void ispisiPoMapi(Map <Kategorija<Artikl>,List<Artikl>> mapaArtikla) {
 		System.out.println("\nTrenutni oglasi po mapama:\n");
@@ -361,4 +318,83 @@ public class Glavna {
 		});});
 	}
 
+	/**
+	 * Funkcija za unos usluge
+	 * 
+	 * @param unos
+	 * @param j
+	 * @return dodajArtikl - dodani artikl
+	 */
+	private static Artikl unesiteUslugu(Scanner unos,Integer j) {
+		unos.nextLine();
+		System.out.println("Unesite naslov "+ (j +1) +". oglasa usluge");
+		String pomNaslov = unos.nextLine();
+		System.out.println("Unesite opis "+ (j +1) +". oglasa usluge");
+		String pomOpis = unos.nextLine();
+		System.out.println("Unesite cijenu "+ (j +1) +". oglasa usluge");
+		String pomStringCijena = unos.nextLine();
+		System.out.print("Odabir stanja artikla >> ");
+		Stanje pomStanje = unosStanja(unos);
+		
+		BigDecimal pomCijena = new BigDecimal(pomStringCijena.replaceAll(",", "."));
+		Artikl dodajArtikl = new Usluga(pomNaslov,pomOpis,pomCijena,pomStanje);
+		return dodajArtikl;
+		
+	}
+	
+	/**
+	 * Funkcija za unos automobila
+	 * 
+	 * @param unos
+	 * @param j
+	 * @return dodaj artikl - dodani artikl
+	 * @throws NemoguceOdreditiGrupuOsiguranjaException
+	 */
+	private static Artikl unesiteAutomobil(Scanner unos,Integer j) throws NemoguceOdreditiGrupuOsiguranjaException {
+		unos.nextLine();
+		System.out.println("Unesite naslov "+ (j +1) +". oglasa Automobila");
+		String pomNaslov = unos.nextLine();
+		System.out.println("Unesite opis "+ (j +1) +". oglasa Automobila");
+		String pomOpis = unos.nextLine();
+		System.out.println("Unesite snagu "+ (j +1) +". oglasa Automobila");
+		String stringSnaga = unos.nextLine();
+		System.out.println("Unesite cijenu "+ (j +1) +". oglasa Automobila");
+		String pomStringCijena = unos.nextLine();
+		System.out.print("Odabir stanja artikla >> ");
+		Stanje pomStanje = unosStanja(unos);
+		
+		BigDecimal pomSnaga = new BigDecimal(stringSnaga);
+		BigDecimal pomCijena = new BigDecimal(pomStringCijena.replaceAll(",", "."));
+		Artikl dodajArtikl = new Automobil(pomNaslov,pomOpis,pomCijena,pomSnaga,pomStanje);
+		
+		return dodajArtikl;
+		
+	}
+	
+	
+	/**
+	 * Funkcija za unos stana
+	 * 
+	 * @param unos
+	 * @param j
+	 * @return dodajArtikl - dodani artikl
+	 */
+	private static Artikl unesiteStan(Scanner unos,Integer j) {
+		unos.nextLine();
+		System.out.println("Unesite naslov "+ (j +1) +". oglasa stana");
+		String pomNaslov = unos.nextLine();
+		System.out.println("Unesite opis "+ (j +1) +". oglasa stana");
+		String pomOpis = unos.nextLine();
+		System.out.println("Unesite kvadraturu "+ (j +1) +". oglasa stana");
+		Integer pomKvadratura = unesiBrojUzProvjeru(unos);
+		unos.nextLine();
+		System.out.println("Unesite cijenu "+ (j +1) +". oglasa stana	");
+		String pomStringCijena = unos.nextLine();
+		System.out.print("Odabir stanja artikla >> ");
+		Stanje pomStanje = unosStanja(unos);
+		
+		BigDecimal pomCijena = new BigDecimal(pomStringCijena.replaceAll(",", "."));
+		Stan dodajArtikl = new Stan(pomNaslov,pomOpis,pomCijena,pomKvadratura,pomStanje);
+		return dodajArtikl;
+	}
 }

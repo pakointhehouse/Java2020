@@ -23,3 +23,76 @@
 2020-03-09 15:12:14,637 INFO [main] h.j.v.g.glavna [glavna.java:178] Kategorije i artikli odabrani
 2020-03-09 15:12:17,326 INFO [main] h.j.v.g.glavna [glavna.java:221] Prodaje unesene
 2020-03-09 15:12:17,332 INFO [main] h.j.v.g.glavna [glavna.java:67] Kraj programa
+2020-03-12 14:07:50,133 INFO [main] h.j.v.g.Glavna [Glavna.java:41] Pocinje program
+2020-03-12 14:07:53,833 INFO [main] h.j.v.g.Glavna [Glavna.java:102] Korisnici odabrani
+2020-03-12 14:08:00,989 INFO [main] h.j.v.g.Glavna [Glavna.java:144] Kategorije i artikli odabrani
+2020-03-12 14:08:04,246 INFO [main] h.j.v.g.Glavna [Glavna.java:187] Prodaje unesene
+2020-03-12 14:08:04,252 INFO [main] h.j.v.g.Glavna [Glavna.java:76] Kraj programa
+2020-03-12 14:08:42,671 INFO [main] h.j.v.g.Glavna [Glavna.java:41] Pocinje program
+2020-03-12 14:08:45,833 INFO [main] h.j.v.g.Glavna [Glavna.java:102] Korisnici odabrani
+2020-03-12 14:08:47,939 INFO [main] h.j.v.g.Glavna [Glavna.java:144] Kategorije i artikli odabrani
+2020-03-12 14:08:49,837 INFO [main] h.j.v.g.Glavna [Glavna.java:187] Prodaje unesene
+2020-03-12 14:08:49,844 INFO [main] h.j.v.g.Glavna [Glavna.java:76] Kraj programa
+2020-03-12 14:12:26,084 INFO [main] h.j.v.g.Glavna [Glavna.java:41] Pocinje program
+2020-03-12 14:12:28,147 INFO [main] h.j.v.g.Glavna [Glavna.java:102] Korisnici odabrani
+2020-03-12 14:12:30,188 INFO [main] h.j.v.g.Glavna [Glavna.java:144] Kategorije i artikli odabrani
+2020-03-12 14:12:31,798 INFO [main] h.j.v.g.Glavna [Glavna.java:187] Prodaje unesene
+2020-03-12 14:12:31,810 INFO [main] h.j.v.g.Glavna [Glavna.java:76] Kraj programa
+2020-03-12 14:34:10,851 INFO [main] h.j.v.g.Glavna [Glavna.java:39] Pocinje program
+2020-03-12 14:34:18,724 INFO [main] h.j.v.g.Glavna [Glavna.java:98] Korisnici odabrani
+2020-03-12 14:34:37,108 INFO [main] h.j.v.g.Glavna [Glavna.java:140] Kategorije i artikli odabrani
+2020-03-12 14:34:40,823 INFO [main] h.j.v.g.Glavna [Glavna.java:183] Prodaje unesene
+2020-03-12 14:34:40,830 INFO [main] h.j.v.g.Glavna [Glavna.java:72] Kraj programa
+2020-03-12 14:55:25,298 INFO [main] h.j.v.g.Glavna [Glavna.java:37] Pocinje program
+2020-03-12 14:55:27,718 INFO [main] h.j.v.g.Glavna [Glavna.java:96] Korisnici odabrani
+2020-03-12 14:55:29,642 INFO [main] h.j.v.g.Glavna [Glavna.java:138] Kategorije i artikli odabrani
+2020-03-12 14:55:30,613 INFO [main] h.j.v.g.Glavna [Glavna.java:181] Prodaje unesene
+2020-03-12 14:55:30,618 INFO [main] h.j.v.g.Glavna [Glavna.java:70] Kraj programa
+2020-03-12 14:56:57,864 INFO [main] h.j.v.g.Glavna [Glavna.java:37] Pocinje program
+2020-03-12 14:57:01,336 INFO [main] h.j.v.g.Glavna [Glavna.java:96] Korisnici odabrani
+2020-03-12 14:57:10,529 INFO [main] h.j.v.g.Glavna [Glavna.java:138] Kategorije i artikli odabrani
+2020-03-12 14:57:12,941 INFO [main] h.j.v.g.Glavna [Glavna.java:181] Prodaje unesene
+2020-03-12 14:57:12,949 INFO [main] h.j.v.g.Glavna [Glavna.java:70] Kraj programa
+2020-03-12 15:00:50,564 INFO [main] h.j.v.g.Glavna [Glavna.java:37] Pocinje program
+2020-03-12 15:00:55,121 INFO [main] h.j.v.g.Glavna [Glavna.java:96] Korisnici odabrani
+2020-03-12 15:01:08,179 INFO [main] h.j.v.g.Glavna [Glavna.java:138] Kategorije i artikli odabrani
+2020-03-12 15:01:10,361 INFO [main] h.j.v.g.Glavna [Glavna.java:181] Prodaje unesene
+2020-03-12 15:02:41,821 INFO [main] h.j.v.g.Glavna [Glavna.java:37] Pocinje program
+2020-03-12 15:02:44,954 INFO [main] h.j.v.g.Glavna [Glavna.java:96] Korisnici odabrani
+2020-03-12 15:02:51,026 INFO [main] h.j.v.g.Glavna [Glavna.java:138] Kategorije i artikli odabrani
+2020-03-12 15:02:52,619 INFO [main] h.j.v.g.Glavna [Glavna.java:181] Prodaje unesene
+2020-03-12 15:02:52,625 INFO [main] h.j.v.g.Glavna [NemoguceOdreditiGrupuOsiguranjaException.java:40] Nema grupe osiguranja
+2020-03-12 15:02:52,625 INFO [main] h.j.v.g.Glavna [NemoguceOdreditiGrupuOsiguranjaException.java:40] Nema grupe osiguranja
+2020-03-12 15:04:28,952 INFO [main] h.j.v.g.Glavna [Glavna.java:37] Pocinje program
+2020-03-12 15:04:31,668 INFO [main] h.j.v.g.Glavna [Glavna.java:96] Korisnici odabrani
+2020-03-12 15:04:37,858 INFO [main] h.j.v.g.Glavna [Glavna.java:138] Kategorije i artikli odabrani
+2020-03-12 15:04:39,695 INFO [main] h.j.v.g.Glavna [Glavna.java:181] Prodaje unesene
+2020-03-12 15:04:39,700 INFO [main] h.j.v.g.Glavna [NemoguceOdreditiGrupuOsiguranjaException.java:40] Nema grupe osiguranja
+2020-03-12 15:04:39,700 INFO [main] h.j.v.g.Glavna [NemoguceOdreditiGrupuOsiguranjaException.java:40] Nema grupe osiguranja
+2020-03-12 15:05:46,376 INFO [main] h.j.v.g.Glavna [Glavna.java:37] Pocinje program
+2020-03-12 15:05:49,156 INFO [main] h.j.v.g.Glavna [Glavna.java:96] Korisnici odabrani
+2020-03-12 15:05:54,085 INFO [main] h.j.v.g.Glavna [Glavna.java:138] Kategorije i artikli odabrani
+2020-03-12 15:05:55,793 INFO [main] h.j.v.g.Glavna [Glavna.java:181] Prodaje unesene
+2020-03-12 15:05:55,799 INFO [main] h.j.v.g.Glavna [NemoguceOdreditiGrupuOsiguranjaException.java:40] Nema grupe osiguranja
+2020-03-12 15:05:55,799 INFO [main] h.j.v.g.Glavna [NemoguceOdreditiGrupuOsiguranjaException.java:40] Nema grupe osiguranja
+2020-03-12 15:06:53,147 INFO [main] h.j.v.g.Glavna [Glavna.java:37] Pocinje program
+2020-03-12 15:06:55,431 INFO [main] h.j.v.g.Glavna [Glavna.java:96] Korisnici odabrani
+2020-03-12 15:07:00,768 INFO [main] h.j.v.g.Glavna [Glavna.java:138] Kategorije i artikli odabrani
+2020-03-12 15:07:02,901 INFO [main] h.j.v.g.Glavna [Glavna.java:181] Prodaje unesene
+2020-03-12 15:07:02,907 INFO [main] h.j.v.g.Glavna [NemoguceOdreditiGrupuOsiguranjaException.java:40] Nema grupe osiguranja
+2020-03-12 15:07:02,907 INFO [main] h.j.v.g.Glavna [NemoguceOdreditiGrupuOsiguranjaException.java:40] Nema grupe osiguranja
+2020-03-12 16:12:32,018 INFO [main] h.j.v.g.Glavna [Glavna.java:37] Pocinje program
+2020-03-12 16:12:35,303 INFO [main] h.j.v.g.Glavna [Glavna.java:96] Korisnici odabrani
+2020-03-12 16:12:39,763 INFO [main] h.j.v.g.Glavna [Glavna.java:138] Kategorije i artikli odabrani
+2020-03-12 16:12:41,669 INFO [main] h.j.v.g.Glavna [Glavna.java:181] Prodaje unesene
+2020-03-12 16:12:41,679 INFO [main] h.j.v.g.Glavna [Glavna.java:70] Kraj programa
+2020-03-12 16:12:44,362 INFO [main] h.j.v.g.Glavna [Glavna.java:37] Pocinje program
+2020-03-12 16:12:47,882 INFO [main] h.j.v.g.Glavna [Glavna.java:96] Korisnici odabrani
+2020-03-12 16:12:53,886 INFO [main] h.j.v.g.Glavna [Glavna.java:138] Kategorije i artikli odabrani
+2020-03-12 16:12:55,745 INFO [main] h.j.v.g.Glavna [Glavna.java:181] Prodaje unesene
+2020-03-12 16:12:55,752 INFO [main] h.j.v.g.Glavna [Glavna.java:70] Kraj programa
+2020-03-12 19:30:32,028 INFO [main] h.j.v.g.Glavna [Glavna.java:37] Pocinje program
+2020-03-12 19:31:06,313 INFO [main] h.j.v.g.Glavna [Glavna.java:94] Korisnici odabrani
+2020-03-12 19:32:37,722 INFO [main] h.j.v.g.Glavna [Glavna.java:136] Kategorije i artikli odabrani
+2020-03-12 19:32:54,895 INFO [main] h.j.v.g.Glavna [Glavna.java:179] Prodaje unesene
+2020-03-12 19:32:54,954 INFO [main] h.j.v.g.Glavna [Glavna.java:68] Kraj programa
